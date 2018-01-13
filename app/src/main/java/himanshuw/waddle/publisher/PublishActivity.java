@@ -1,4 +1,4 @@
-package himanshuw.waddle;
+package himanshuw.waddle.publisher;
 
 import android.content.Context;
 import android.content.Intent;

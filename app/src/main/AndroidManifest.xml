@@ -20,8 +20,8 @@
             android:label="@string/title_activity_profile_activiity"
             android:name="himanshuw.waddle.NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="himanshuw.waddle.PublishActivity" />
-        <activity android:name="himanshuw.waddle.ReviewerActivity"></activity>
+        <activity android:name="himanshuw.waddle.publisher.PublishActivity" />
+        <activity android:name="himanshuw.waddle.reviwer.ReviewerActivity"></activity>
     </application>
 
 </manifest>
