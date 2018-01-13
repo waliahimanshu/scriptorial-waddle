@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import himanshuw.scriptorial_waddle.R;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class NavigationDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

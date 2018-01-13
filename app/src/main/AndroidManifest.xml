@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActiviity">
+        <activity android:name="himanshuw.waddle.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,19 +18,10 @@
         </activity>
         <activity
             android:label="@string/title_activity_profile_activiity"
-            android:name=".MainActivity"
+            android:name="himanshuw.waddle.NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:label="@string/title_activity_main"
-            android:name="himanshuw.waddle.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="himanshuw.waddle.HomeActivity"></activity>
+        <activity android:name="himanshuw.waddle.PublishActivity" />
+        <activity android:name="himanshuw.waddle.ReviewerActivity"></activity>
     </application>
 
 </manifest>
