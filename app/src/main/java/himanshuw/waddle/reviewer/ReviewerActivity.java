@@ -1,4 +1,4 @@
-package himanshuw.waddle.reviwer;
+package himanshuw.waddle.reviewer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

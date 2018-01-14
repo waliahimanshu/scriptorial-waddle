@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">scriptorial-waddle</string>
-    <string name="title_activity_profile_activiity">ProfileActiviity</string>
+    <string name="title_activity_profile">Profile</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -16,4 +16,6 @@
         safe spaces where people can share their lives and perspectives with others, helping to build bridges among communities.  I wish that Facebook would work with journalists to help them learn how to use Facebook natively to inform the public conversation where and when it occurs. Until now, Facebook has tried to suck up to media companies (and by extension politicians) by providing distribution and monetization opportunties through Instant Articles and video.
         \n\n
         Oh, well. So much for that. Now I want to see Facebook help news media make sharable journalism and help them make money through that. But I worry that news organizations will be gun-shy of even trying, sans rug.  So…  I have been rethinking my definition of journalism. It used to be: helping communties organize their knowledge to better organize themselves. That was an information-based definition.</string>
+    <string name="title_publisher">Write here</string>
+    <string name="save_your_writing">Save your writing</string>
 </resources>

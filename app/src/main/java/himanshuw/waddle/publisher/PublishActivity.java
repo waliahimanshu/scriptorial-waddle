@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.TooltipCompat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.EditText;
 import himanshuw.scriptorial_waddle.R;
@@ -23,6 +26,23 @@ public class PublishActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
         getDelegate().setHandleNativeActionModesEnabled(false);
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_bar_button, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.save_action) {
+            TooltipCompat.setTooltipText(findViewById(R.id.save_action),"Save your writing");
+
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }
