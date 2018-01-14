@@ -1,10 +1,21 @@
 <resources>
     <string name="app_name">scriptorial-waddle</string>
-    <string name="title_activity_profile_activiity">ProfileActiviity</string>
+    <string name="title_activity_profile">Profile</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="essay_template">I am hopeful that Facebook’s effort to encourage “meaningful interactions” could lead to greater civility in our conversations, which society desperately needs. The question is: Will Facebook value and measure civility, intelligence, and credibility or mere conversation? We know what conversation alone brings us: comments and trolls. What are “meaningful interactions?”  And…  I wish that Facebook would fuel and support a flight to quality in news.
+        \n\n
+        Facebook has lumped all so-called “public content” into one, big, gnarly bucket. It is is dying to get rid of the shit content that gets them into political and PR trouble and that degrades the experience on Facebook and in our lives. Fine. But they must not throw the journalistic baby out with the trolly bathwater. Facebook needs to differentiate and value quality content — links to The Washington Post, The New York Times, The Guardian, and thousands of responsible, informative, useful old and new news outlets around the world.
+        \n\n
+        I wish that Facebook would make clear that it will not use this change to exploit media companies for more advertising revenue when the goal is to inform the public.  I wish that Facebook would not just connect us with the people we know and agree with — our social filter bubbles — but also would devote effort to making strangers less strange, to robbing the demagogues and hate mongers of their favorite weapon: the Other. That, I firmly believe, is the most valuable thing Facebook could do to combat polarization in our world: creating
+        \n\n
+        safe spaces where people can share their lives and perspectives with others, helping to build bridges among communities.  I wish that Facebook would work with journalists to help them learn how to use Facebook natively to inform the public conversation where and when it occurs. Until now, Facebook has tried to suck up to media companies (and by extension politicians) by providing distribution and monetization opportunties through Instant Articles and video.
+        \n\n
+        Oh, well. So much for that. Now I want to see Facebook help news media make sharable journalism and help them make money through that. But I worry that news organizations will be gun-shy of even trying, sans rug.  So…  I have been rethinking my definition of journalism. It used to be: helping communties organize their knowledge to better organize themselves. That was an information-based definition.</string>
+    <string name="title_publisher">Write here</string>
+    <string name="save_your_writing">Save your writing</string>
 </resources>

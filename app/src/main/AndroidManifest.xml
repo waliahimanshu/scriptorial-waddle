@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActiviity">
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name="himanshuw.waddle.HomeActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,20 +18,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/title_activity_profile_activiity"
-            android:name=".MainActivity"
+            android:label="@string/title_activity_profile"
+            android:name="himanshuw.waddle.NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:label="@string/title_activity_main"
-            android:name="himanshuw.waddle.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name="himanshuw.waddle.HomeActivity"></activity>
+        <activity
+            android:name="himanshuw.waddle.publisher.PublishActivity"
+            android:label="@string/title_publisher"
+            android:parentActivityName="himanshuw.waddle.HomeActivity" />
+        <activity
+            android:name="himanshuw.waddle.reviewer.ReviewerActivity"
+            android:parentActivityName="himanshuw.waddle.HomeActivity" />
     </application>
 
 </manifest>
