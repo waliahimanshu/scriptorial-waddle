@@ -1,4 +1,4 @@
-package himanshuw.waddle.reviewer;
+package com.scriptorial.waddle.reviewer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

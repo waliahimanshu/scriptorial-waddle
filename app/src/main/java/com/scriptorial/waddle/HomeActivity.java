@@ -1,10 +1,11 @@
-package himanshuw.waddle;
+package com.scriptorial.waddle;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import himanshuw.waddle.publisher.PublishActivity;
+import com.scriptorial.waddle.publisher.PublishActivity;
+import himanshuw.waddle.R;
 
 public class HomeActivity extends AppCompatActivity {
 

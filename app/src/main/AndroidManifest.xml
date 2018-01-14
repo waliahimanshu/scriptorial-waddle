@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="himanshuw.waddle"
+<manifest package="com.scriptorial.waddle"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name="himanshuw.waddle.HomeActivity">
+        <activity android:name=".HomeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,16 +19,16 @@
         </activity>
         <activity
             android:label="@string/title_activity_profile"
-            android:name="himanshuw.waddle.NavigationDrawerActivity"
+            android:name=".NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name="himanshuw.waddle.publisher.PublishActivity"
             android:label="@string/title_publisher"
-            android:parentActivityName="himanshuw.waddle.HomeActivity" />
+            android:name=".publisher.PublishActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity
-            android:name="himanshuw.waddle.reviewer.ReviewerActivity"
-            android:parentActivityName="himanshuw.waddle.HomeActivity" />
+            android:name=".reviewer.ReviewerActivity"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

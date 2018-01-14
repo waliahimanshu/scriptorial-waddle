@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="himanshuw.waddle.reviewer.ReviewerActivity">
+    tools:context="himanshuw.waddle.com.waddle.reviewer.ReviewerActivity">
 
 </android.support.constraint.ConstraintLayout>
