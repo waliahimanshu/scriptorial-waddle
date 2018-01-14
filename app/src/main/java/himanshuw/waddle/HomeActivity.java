@@ -21,6 +21,6 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
             }
         });
-        floatingActionButton.performClick();
+//        floatingActionButton.performClick();
     }
 }
