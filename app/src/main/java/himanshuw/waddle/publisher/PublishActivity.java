@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.EditText;
-import himanshuw.scriptorial_waddle.R;
+import himanshuw.waddle.R;
 
 public class PublishActivity extends AppCompatActivity {
 

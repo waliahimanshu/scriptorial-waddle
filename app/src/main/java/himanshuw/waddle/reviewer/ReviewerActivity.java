@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.View;
-import himanshuw.scriptorial_waddle.R;
+import himanshuw.waddle.R;
 
 public class ReviewerActivity extends AppCompatActivity {
 
