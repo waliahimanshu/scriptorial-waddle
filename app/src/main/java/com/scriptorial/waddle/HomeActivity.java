@@ -5,7 +5,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.scriptorial.waddle.publisher.PublishActivity;
-import himanshuw.waddle.R;
 
 public class HomeActivity extends AppCompatActivity {
 
