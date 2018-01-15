@@ -9,9 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.EditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.scriptorial.waddle.R;
 
 public class PublishActivity extends AppCompatActivity {
+
+    private DatabaseReference myRef;
 
     public static Intent getLaunchIntent(Context context) {
         return new Intent(context, PublishActivity.class);
@@ -27,6 +31,10 @@ public class PublishActivity extends AppCompatActivity {
 
         getDelegate().setHandleNativeActionModesEnabled(false);
 
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        // creates user node in json
+        myRef = database.getReference("users");
 
     }
 
@@ -39,8 +47,10 @@ public class PublishActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.save_action) {
-            TooltipCompat.setTooltipText(findViewById(R.id.save_action),"Save your writing");
+            TooltipCompat.setTooltipText(findViewById(R.id.save_action), "Save your writing");
 
+            //saves to DB
+            // myRef.setValue(new User("test","test@t.com"));
         }
         return super.onOptionsItemSelected(item);
 

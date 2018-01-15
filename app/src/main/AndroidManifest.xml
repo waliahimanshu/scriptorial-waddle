@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity android:name=".HomeActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +20,6 @@
             android:label="@string/title_activity_profile"
             android:name=".NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:label="@string/title_publisher"
             android:name=".publisher.PublishActivity"
@@ -29,6 +27,7 @@
         <activity
             android:name=".reviewer.ReviewerActivity"
             android:parentActivityName=".HomeActivity" />
+        <activity android:name=".Login.LoginActivity"></activity>
     </application>
 
 </manifest>
