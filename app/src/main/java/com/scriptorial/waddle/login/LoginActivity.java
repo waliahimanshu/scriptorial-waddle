@@ -27,12 +27,10 @@ import com.scriptorial.waddle.R;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
 
-    // Firebase instance variables
-    private FirebaseAuth mFirebaseAuth;
-    private static final String TAG = "SignInActivity";
+    private FirebaseAuth firebaseAuth;
+    private static final String TAG = LoginActivity.class.getSimpleName();
     private static final int RC_SIGN_IN = 9001;
 
-    private SignInButton mSignInButton;
 
     private GoogleApiClient mGoogleApiClient;
 
@@ -45,7 +43,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         TextView textView = (TextView) signInButton.getChildAt(0);
-        textView.setText("Sign in with google");
+        textView.setText(R.string.signup_with_google);
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso).build();
 
         // Initialize FirebaseAuth
-        mFirebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 
     }
 
@@ -77,25 +75,22 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             if (result.isSuccess()) {
-                // Google Sign-In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
-                // Google Sign-In failed
-                Log.e(TAG, "Google Sign-In failed.");
+                Log.w(TAG, "Google Sign-In failed.");
             }
         }
     }
 
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-        Log.d(TAG, "firebaseAuthWithGooogle:" + acct.getId());
+        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-        mFirebaseAuth.signInWithCredential(credential).addOnCompleteListener(this,
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this,
                 new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -117,8 +112,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        // An unresolvable error has occurred and Google APIs (including Sign-In) will not
-        // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }

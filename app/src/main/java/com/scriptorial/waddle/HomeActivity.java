@@ -15,14 +15,18 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.scriptorial.waddle.database.User;
+import com.scriptorial.waddle.database.UserDao;
+import com.scriptorial.waddle.database.UserDatabase;
 import com.scriptorial.waddle.login.LoginActivity;
+import com.scriptorial.waddle.publisher.PublishActivity;
 
 public class HomeActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
 
     // Firebase instance variables
-    private FirebaseAuth mFirebaseAuth;
-    private FirebaseUser mFirebaseUser;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
     public static final String ANONYMOUS = "anonymous";
     private String mUsername;
     private String mPhotoUrl;
@@ -37,30 +41,31 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //                startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
-                startActivity(ScrollingActivity.getLaunchIntent(getBaseContext()));
+                startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
+                //                startActivity(ScrollingActivity.getLaunchIntent(getBaseContext()));
             }
         });
-        //        floatingActionButton.performClick();
 
         // Initialize Firebase Auth
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        if (mFirebaseUser == null) {
-
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser == null) {
             // Not signed in, launch the Sign In activity
 
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
         } else {
-            mUsername = mFirebaseUser.getDisplayName();
-//            String[] split = mFirebaseUser.getDisplayName().split(" ");
-//            UserDatabase.getInstance(getBaseContext()).getUserDao().insert(
-//                    new User(mFirebaseUser.getUid(), split[0], split[1], mPhotoUrl));
-//            if (mFirebaseUser.getPhotoUrl() != null) {
-//                mPhotoUrl = mFirebaseUser.getPhotoUrl().toString();
-//            }
+            
+            String[] split = firebaseUser.getDisplayName().split(" ");
+            UserDao userDao = UserDatabase.getInstance(getBaseContext()).getUserDao();
+
+            if (userDao.findById(firebaseUser.getUid())!=null)
+            userDao.insert(
+                    new User(firebaseUser.getUid(), split[0], split[1], mPhotoUrl));
+            if (firebaseUser.getPhotoUrl() != null) {
+                firebaseUser.getPhotoUrl().toString();
+            }
         }
 
         mGoogleApiClient = new GoogleApiClient.Builder(this).enableAutoManage(this /* FragmentActivity */, this /*
@@ -83,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sign_out_menu:
-                mFirebaseAuth.signOut();
+                firebaseAuth.signOut();
                 Auth.GoogleSignInApi.signOut(mGoogleApiClient);
                 mUsername = ANONYMOUS;
                 startActivity(new Intent(this, LoginActivity.class));

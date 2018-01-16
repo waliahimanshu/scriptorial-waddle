@@ -51,6 +51,8 @@ public class PublishActivity extends AppCompatActivity {
 
             //saves to DB
             // myRef.setValue(new User("test","test@t.com"));
+
+          
         }
         return super.onOptionsItemSelected(item);
 

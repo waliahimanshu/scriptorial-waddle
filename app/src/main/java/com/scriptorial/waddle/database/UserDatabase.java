@@ -26,4 +26,7 @@ public abstract class UserDatabase extends RoomDatabase {
     }
 
     public abstract UserDao getUserDao();
+
+    public abstract PostsDao getPostsDao();
+
 }
