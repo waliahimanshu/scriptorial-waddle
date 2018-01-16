@@ -1,4 +1,4 @@
-package com.scriptorial.waddle.Login;
+package com.scriptorial.waddle.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -122,4 +122,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
+
+
+
 }
