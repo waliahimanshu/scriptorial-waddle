@@ -1,6 +1,7 @@
-package com.scriptorial.waddle;
+package com.scriptorial.waddle.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -15,13 +16,15 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.scriptorial.waddle.R;
 import com.scriptorial.waddle.database.User;
 import com.scriptorial.waddle.database.UserDao;
 import com.scriptorial.waddle.database.UserDatabase;
 import com.scriptorial.waddle.login.LoginActivity;
 import com.scriptorial.waddle.publisher.PublishActivity;
 
-public class HomeActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+public class HomeActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener,
+        HomeFragment.OnFragmentInteractionListener {
 
 
     // Firebase instance variables
@@ -105,5 +108,10 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         // be available.
         Log.d(HomeActivity.class.getSimpleName(), "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

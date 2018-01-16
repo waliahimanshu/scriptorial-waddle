@@ -12,17 +12,17 @@ import java.util.List;
 public interface PostsDao {
 
     @Insert
-    void insert(Posts repo);
+    void insert(Posts posts);
 
     @Update
-    void update(Posts... repos);
+    void update(Posts... posts);
 
     @Delete
-    void delete(Posts... repos);
+    void delete(Posts... posts);
 
-    @Query("SELECT * FROM repo")
+    @Query("SELECT * FROM Posts")
     List<Posts> getAllRepos();
 
-    @Query("SELECT * FROM repo WHERE userId=:userId")
+    @Query("SELECT * FROM Posts WHERE userId=:userId")
     List<Posts> findPostsForUser(final int userId);
 }

@@ -11,7 +11,7 @@ public class User {
     public final String lastName;
     public final String photoUri;
 
-    public User(String id, String firstName, String lastName, String photoUri) {
+    public User(@NonNull String id, String firstName, String lastName, String photoUri) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +24,10 @@
         <activity
             android:label="@string/title_publisher"
             android:name=".publisher.PublishActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".home.HomeActivity" />
         <activity
             android:name=".reviewer.ReviewerActivity"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName=".home.HomeActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity
             android:label="@string/title_activity_scrolling"
@@ -36,7 +36,7 @@
         <activity
             android:label="@string/title_item_list"
             android:name=".detailFlow.ItemListActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:label="@string/title_item_detail"
             android:name=".detailFlow.ItemDetailActivity"
