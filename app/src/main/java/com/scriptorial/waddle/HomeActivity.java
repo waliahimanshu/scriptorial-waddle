@@ -8,7 +8,6 @@ import android.view.View;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.scriptorial.waddle.Login.LoginActivity;
-import com.scriptorial.waddle.publisher.PublishActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -28,7 +27,8 @@ public class HomeActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
+//                startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
+                startActivity(ScrollingActivity.getLaunchIntent(getBaseContext()));
             }
         });
 //        floatingActionButton.performClick();

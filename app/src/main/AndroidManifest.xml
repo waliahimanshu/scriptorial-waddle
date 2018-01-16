@@ -27,7 +27,11 @@
         <activity
             android:name=".reviewer.ReviewerActivity"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".Login.LoginActivity" />
+        <activity
+            android:label="@string/title_activity_scrolling"
+            android:name=".ScrollingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>
