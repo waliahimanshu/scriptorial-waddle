@@ -1,4 +1,4 @@
-package com.scriptorial.waddle.database;
+package com.scriptorial.waddle.database.user;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

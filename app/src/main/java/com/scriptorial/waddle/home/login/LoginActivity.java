@@ -1,4 +1,4 @@
-package com.scriptorial.waddle.login;
+package com.scriptorial.waddle.home.login;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,5 +1,6 @@
 package com.scriptorial.waddle.home;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,17 +22,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.scriptorial.waddle.R;
-import com.scriptorial.waddle.ScrollingActivity;
-import com.scriptorial.waddle.database.AppDatabase;
-import com.scriptorial.waddle.database.User;
-import com.scriptorial.waddle.database.UserDao;
-import com.scriptorial.waddle.login.LoginActivity;
+import com.scriptorial.waddle.home.login.LoginActivity;
+import com.scriptorial.waddle.publisher.UserContentInputActivity;
 
 
 public class HomeFragment extends Fragment implements GoogleApiClient.OnConnectionFailedListener {
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     // Firebase instance variables
     private FirebaseAuth firebaseAuth;
@@ -41,61 +36,32 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
     private String mPhotoUrl;
     private GoogleApiClient mGoogleApiClient;
 
-    private String mParam1;
-    private String mParam2;
-
+    HomeViewModel homeViewModel;
     private OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
 
-        // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseUser = firebaseAuth.getCurrentUser();
         if (firebaseUser == null) {
             // Not signed in, launch the Sign In activity
 
-            startActivity(new Intent(getContext(), LoginActivity.class));
-            getActivity().finish();
-            return;
         } else {
 
-            String[] split = firebaseUser.getDisplayName().split(" ");
-            UserDao userDao = AppDatabase.getInstance(getContext()).getUserDao();
-
-            if (userDao.findById(firebaseUser.getUid()) != null) {
-                userDao.insert(new User(firebaseUser.getUid(), split[0], split[1], mPhotoUrl));
-            }
-            if (firebaseUser.getPhotoUrl() != null) {
-                firebaseUser.getPhotoUrl().toString();
-            }
         }
 
         mGoogleApiClient = new GoogleApiClient.Builder(getContext()).enableAutoManage(getActivity() /*
-        FragmentActivity */,
-                this /*
+        FragmentActivity */, this /*
         OnConnectionFailedListener */).addApi(Auth.GOOGLE_SIGN_IN_API).build();
 
-
+        Application application = getActivity().getApplication();
+        HomeActivity activity = (HomeActivity) getActivity();
 
     }
 
@@ -108,8 +74,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //                startActivity(PublishActivity.getLaunchIntent(getBaseContext()));
-                startActivity(ScrollingActivity.getLaunchIntent(getContext()));
+                startActivity(UserContentInputActivity.getLaunchIntent(getContext()));
             }
         });
         return view;
@@ -171,6 +136,13 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        homeViewModel.handleLogin();
     }
 
     /**

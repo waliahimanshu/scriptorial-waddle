@@ -1,8 +1,9 @@
-package com.scriptorial.waddle.database;
+package com.scriptorial.waddle.database.Posts;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import com.scriptorial.waddle.database.user.User;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
@@ -12,12 +13,14 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
                                 onDelete = CASCADE))
 public class Posts {
     @PrimaryKey public final int id;
-    public final int userId;
-    public final String posts;
+    public final String userId;
+    public final String postEssay;
+    public final String postCustomQuestion;
 
-    public Posts(int id, int userId, String posts) {
+    public Posts(int id, String userId, String postEssay, String postCustomQuestion) {
         this.id = id;
         this.userId = userId;
-        this.posts = posts;
+        this.postEssay = postEssay;
+        this.postCustomQuestion = postCustomQuestion;
     }
 }

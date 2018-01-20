@@ -4,6 +4,10 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import com.scriptorial.waddle.database.Posts.Posts;
+import com.scriptorial.waddle.database.Posts.PostsDao;
+import com.scriptorial.waddle.database.user.User;
+import com.scriptorial.waddle.database.user.UserDao;
 
 @Database(entities = {User.class, Posts.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
@@ -27,7 +31,7 @@ public abstract class AppDatabase extends RoomDatabase {
     }
 
 
-    public static String getApplicationName(Context context) {
+    private static String getApplicationName(Context context) {
         return context.getApplicationInfo().loadLabel(context.getPackageManager()).toString();
     }
 

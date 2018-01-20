@@ -1,4 +1,4 @@
-package com.scriptorial.waddle.database;
+package com.scriptorial.waddle.database.user;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;

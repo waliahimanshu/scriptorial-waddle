@@ -1,4 +1,4 @@
-package com.scriptorial.waddle.database;
+package com.scriptorial.waddle.database.Posts;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
@@ -25,4 +25,7 @@ public interface PostsDao {
 
     @Query("SELECT * FROM Posts WHERE userId=:userId")
     List<Posts> findPostsForUser(final int userId);
+
+//    @Query("UPDATE Posts set postEssay =:userPostEssay , postCustomQuestion =:userQuestion  WHERE userId=:userId")
+//    List<Posts> uodatePostByUserId(String userId, String userPostEssay, String userQuestion);
 }

@@ -22,16 +22,13 @@
             android:name=".NavigationDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:label="@string/title_publisher"
-            android:name=".publisher.PublishActivity"
-            android:parentActivityName=".home.HomeActivity" />
-        <activity
             android:name=".reviewer.ReviewerActivity"
             android:parentActivityName=".home.HomeActivity" />
-        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".home.login.LoginActivity" />
         <activity
-            android:label="@string/title_activity_scrolling"
-            android:name=".ScrollingActivity"
+            android:label="@string/title_user_content"
+            android:name=".publisher.UserContentInputActivity"
+            android:parentActivityName=".home.HomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:label="@string/title_item_list"
