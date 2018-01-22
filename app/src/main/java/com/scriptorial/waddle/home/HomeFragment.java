@@ -62,6 +62,7 @@ public class HomeFragment extends Fragment implements GoogleApiClient.OnConnecti
 
         Application application = getActivity().getApplication();
         HomeActivity activity = (HomeActivity) getActivity();
+        homeViewModel = HomeModule.provideHomeViewModel(getActivity());
 
     }
 

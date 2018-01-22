@@ -13,15 +13,11 @@ public interface UserDao {
     @Query("SELECT * FROM user")
     List<User> getAll();
 
-    @Query("SELECT * FROM user where firstName LIKE  :firstName AND lastName LIKE :lastName")
-    User findByName(String firstName, String lastName);
-
     @Query("SELECT COUNT(*) from user")
     int countUsers();
 
     @Insert
     void insertAll(User... users);
-
 
     @Insert
     void insert(User user);

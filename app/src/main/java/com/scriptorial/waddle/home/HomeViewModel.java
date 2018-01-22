@@ -5,13 +5,13 @@ import com.scriptorial.waddle.database.user.User;
 import com.scriptorial.waddle.database.user.UserRepository;
 
 
-public class HomeViewModel {
+class HomeViewModel {
 
     private final HomeNavigator homeNavigator;
     private final FirebaseWrapper firebaseWrapper;
     private final UserRepository userRepository;
 
-    public HomeViewModel(HomeNavigator homeNavigator, FirebaseWrapper firebaseWrapper, UserRepository userRepository) {
+    HomeViewModel(HomeNavigator homeNavigator, FirebaseWrapper firebaseWrapper, UserRepository userRepository) {
         this.homeNavigator = homeNavigator;
         this.firebaseWrapper = firebaseWrapper;
         this.userRepository = userRepository;
@@ -29,15 +29,15 @@ public class HomeViewModel {
         homeNavigator.launchWriterInputScreen();
     }
 
-    public void handleLogin() {
+    void handleLogin() {
         FirebaseUser currentUser = firebaseWrapper.getFirebaseAuthentication().getCurrentUser();
         if (currentUser == null) {
             doUserLogin();
         } else {
             String[] split = currentUser.getDisplayName().split(" ");
 
-            if (userRepository.findUserById(currentUser.getUid()) != null) {
-                userRepository.insertUser(
+            if (userRepository.findById(currentUser.getUid()) != null) {
+                userRepository.add(
                         new User(currentUser.getUid(), split[0], split[1], currentUser.getPhotoUrl().toString()));
             }
         }
